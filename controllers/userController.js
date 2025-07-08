@@ -6,10 +6,11 @@ const SECRET = "sometext";
 
 const register = async (req, res) => {
   try {
-    const { name, email, password, role } = req.body;
+    const { firstName,lastName, email, password, role } = req.body;
     const hashedpwd = await bcrypt.hash(password, 10);
     const user = {
-      name,
+      firstName,
+      lastName,
       email,
       password: hashedpwd,
       role,
@@ -64,7 +65,8 @@ const login = async (req, res) => {
       const isMatch = await bcrypt.compare(password, user.password);
       if (isMatch) {
         const userObj = {
-          name: user.name,
+          firstName: user.firstName,
+          lastName: user.lastName,
           email: user.email,
           role: user.role,
         };
