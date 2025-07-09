@@ -84,4 +84,17 @@ const login = async (req, res) => {
     res.status(400).json({ message: "Something went wrong" });
   }
 };
+
+
+const showprofile = async(req,res)=>{
+  try{
+    const id = req.params.id;
+    
+
+  }catch(err){
+    console.log(err);
+    res.status(400).json({message:"something went wrong"})
+  }
+
+}
 export {register,login,showUsers,userUpdate,userDelete}

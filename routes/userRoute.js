@@ -12,5 +12,6 @@ Router.post("/register", register);
 Router.patch("/:id", authenticate, authorize("admin"), userUpdate);
 Router.delete("/:id", authenticate, authorize("admin"), userDelete);
 Router.get("/users", authenticate, authorize("admin"), showUsers);
+Router.get("/:id/profile",authenticate,authorize("admin"), showprofile);
 Router.post("/login", login);
 export default Router;
