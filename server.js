@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 app.use(cors(
   {
-    origin:"https://mern-frontend-phi-one.vercel.app/"
+    origin:"https://mern-frontend-phi-one.vercel.app"
   }
  
 ));
