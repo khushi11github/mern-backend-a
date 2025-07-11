@@ -6,15 +6,14 @@ const SECRET = "sometext";
 
 const register = async (req, res) => {
   try {
-    const { firstName,lastName, email, password, role,status } = req.body;
+    const { firstName,lastName, email, password } = req.body;
     const hashedpwd = await bcrypt.hash(password, 10);
     const user = {
       firstName,
       lastName,
       email,
       password: hashedpwd,
-      role,
-      status: status || "active", 
+    
     };
     const result = await userModel.create(user);
     res.status(201).json(result);
