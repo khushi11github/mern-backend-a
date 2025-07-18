@@ -10,13 +10,10 @@ dotenv.config();
 
 const app = express();
 app.use(express.static("public"));
-app.use(cors(
-  {
-    origin:"http://localhost:5173"
-
-  }
- 
-));
+app.use(cors({
+  origin: 'https://mern-frontend-phi-one.vercel.app', 
+  credentials: true, 
+}));
 
 app.use(express.static("public"));
 const dbuser = encodeURIComponent(process.env.DBUSER);
