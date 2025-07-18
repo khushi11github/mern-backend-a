@@ -5,8 +5,9 @@ const userSchema = mongoose.Schema(
     lastName:{type:String},
     email: { type: String, unique: true },
     password: { type: String },
+    role: { type: String, default: "user" }, 
    
   },
   { timestamps: true }
 );
-export default mongoose.model("User", userSchema);
+export default mongoose.model("users", userSchema);
