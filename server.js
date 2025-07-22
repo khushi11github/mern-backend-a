@@ -11,7 +11,8 @@ dotenv.config();
 const app = express();
 app.use(express.static("public"));
 app.use(cors({
-  origin: "https://mern-frontend-a-qr57.onrender.com",
+  origin: "https://mern-frontend-phi-one.vercel.app",
+
   // origin: " http://localhost:5173",
   credentials: true, 
 }));
